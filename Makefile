@@ -18,7 +18,7 @@ stack      = $(stack_yaml) stack
 stack_docker = $(stack) --docker
 
 # GHC version to build
-TARGET_GHC_VERSION ?= 8.6.5
+TARGET_GHC_VERSION ?= 8.8.2
 
 ################################################################################
 # Standard build (runs in the Docker container)
