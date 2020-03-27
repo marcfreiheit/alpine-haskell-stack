@@ -9,10 +9,10 @@ FROM alpine:3.9 AS base
 # Default to building with 'integer-gmp' and 'libgmp' support
 ARG GHC_BUILD_TYPE
 
-# Must be a valid GHC version number, only tested with 8.4.4, 8.6.4, and 8.6.5
+# Must be a valid GHC version number, only tested with 8.4.4, 8.6.4, 8.6.5 and 8.8.2
 #
-# Default to GHC version 8.6.5 (latest at the time of writing)
-ARG GHC_VERSION=8.6.5
+# Default to GHC version 8.8.2 (latest at the time of writing)
+ARG GHC_VERSION=8.8.2
 
 # Add ghcup's bin directory to the PATH so that the versions of GHC it builds
 # are available in the build layers
@@ -53,7 +53,7 @@ FROM base AS build-ghc
 
 # Carry build args through to this stage
 ARG GHC_BUILD_TYPE=gmp
-ARG GHC_VERSION=8.6.5
+ARG GHC_VERSION=8.8.2
 
 RUN echo "Install OS packages necessary to build GHC" &&\
     apk add --no-cache \
@@ -122,7 +122,7 @@ FROM base
 
 # Carry build args through to this stage
 ARG GHC_BUILD_TYPE=gmp
-ARG GHC_VERSION=8.6.5
+ARG GHC_VERSION=8.8.2
 
 COPY --from=build-ghc /.ghcup /.ghcup
 COPY --from=build-tooling /usr/bin/stack /usr/bin/stack
