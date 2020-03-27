@@ -21,7 +21,7 @@ ENV PATH=/.ghcup/bin:$PATH
 
 # Use the latest version of ghcup (at the time of writing)
 ENV GHCUP_VERSION=0.0.8
-ENV GHCUP_SHA256="b4b200d896eb45b56c89d0cfadfcf544a24759a6ffac029982821cc96b2faedb  ghcup"
+ENV GHCUP_SHA256="e09669752067dc1268bff754237e91c4dee9b35bc4e20c280faafeef9c21ea74  ghcup"
 
 # Install the basic required dependencies to run 'ghcup' and 'stack'
 RUN apk upgrade --no-cache &&\
